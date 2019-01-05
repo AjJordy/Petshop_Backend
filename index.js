@@ -1,8 +1,6 @@
-const { User } = require('./app/models');
-
+const { User, cliente } = require('./app/models');
 const express = require('express');
 const bodyParser = require('body-parser');
-
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -10,8 +8,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // User.create({ name: 'Claudio', email: 'claudio@rocketseat.com.br', password: '123456' });
 
 app.post('/register', async (req, res) => {
-    const user = await User.create(req.body);
-    res.json(user);
+    const cliente = await cliente.create(req.body);
+    res.json(cliente);
 });
 
 app.get('/find/:id', (req, res) => {

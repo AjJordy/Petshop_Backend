@@ -11,24 +11,36 @@ module.exports = {
       return queryInterface.createTable('users', { id: Sequelize.INTEGER });
     */
 
-    return queryInterface.createTable('Users', {  
+   return queryInterface.createTable('cliente', {  
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: DataTypes.INTEGER,
       },
-      name: {
+      nome: {
         allowNull: false,
         type: DataTypes.STRING,
       },
       email: {
-        allowNull: false,
+        allowNull: true,
         type: DataTypes.STRING,
         unique: true,
       },
-      password: {
-        allowNull: false,
+      telefone: {
+        allowNull: true,
+        type: DataTypes.STRING,
+      },
+      celular: {
+        allowNull: true,
+        type: DataTypes.STRING,
+      },
+      whatsapp: {
+        allowNull: true,
+        type: DataTypes.BOOLEAN,
+      },
+      cpf: {
+        allowNull: true,
         type: DataTypes.STRING,
       },
       createdAt: {
@@ -50,6 +62,6 @@ module.exports = {
       Example:
       return queryInterface.dropTable('users');
     */
-    return queryInterface.dropTable('Users');
+    return queryInterface.dropTable('cliente');
   }
 };
